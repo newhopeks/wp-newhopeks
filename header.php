@@ -20,6 +20,13 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
+<script src="<?php echo bloginfo('stylesheet_directory'); ?>/library/js/util.js" type="text/javascript"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" ></script>
+<script src="<?php echo bloginfo('stylesheet_directory'); ?>/library/js/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/library/css/nivo-slider.css" type="text/css" media="all" />
+
 <?php wp_head(); // wp_head ?>
 
 </head>
