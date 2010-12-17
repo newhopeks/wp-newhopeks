@@ -26,6 +26,7 @@
 <script src="<?php echo bloginfo('stylesheet_directory'); ?>/library/js/jquery.nivo.slider.pack.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/library/css/nivo-slider.css" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/library/css/nivo-slider-custom.css" type="text/css" media="all" />
 
 <?php wp_head(); // wp_head ?>
 
