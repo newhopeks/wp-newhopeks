@@ -1,70 +1,55 @@
 <?php
 /**
- * Archive Template
+ * The template for displaying Archive pages.
  *
- * The archive template is the default template used for archives pages without a more specific template. 
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
  *
- * @package Prototype
- * @subpackage Template
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage Starkers
+ * @since Starkers 3.0
  */
 
-get_header(); // Loads the header.php template. ?>
+get_header(); ?>
 
-	<?php do_atomic( 'before_content' ); // prototype_before_content ?>
+<?php
+	/* Queue the first post, that way we know
+	 * what date we're dealing with (if that is the case).
+	 *
+	 * We reset this later so we can run the loop
+	 * properly with a call to rewind_posts().
+	 */
+	if ( have_posts() )
+		the_post();
+?>
 
-	<div id="content">
+			<h1>
+<?php if ( is_day() ) : ?>
+				<?php printf( __( 'Daily Archives: %s', 'twentyten' ), get_the_date() ); ?>
+<?php elseif ( is_month() ) : ?>
+				<?php printf( __( 'Monthly Archives: %s', 'twentyten' ), get_the_date('F Y') ); ?>
+<?php elseif ( is_year() ) : ?>
+				<?php printf( __( 'Yearly Archives: %s', 'twentyten' ), get_the_date('Y') ); ?>
+<?php else : ?>
+				<?php _e( 'Blog Archives', 'twentyten' ); ?>
+<?php endif; ?>
+			</h1>
 
-		<?php do_atomic( 'open_content' ); // prototype_open_content ?>
+<?php
+	/* Since we called the_post() above, we need to
+	 * rewind the loop back to the beginning that way
+	 * we can run the loop properly, in full.
+	 */
+	rewind_posts();
 
-		<div class="hfeed">
+	/* Run the loop for the archives page to output the posts.
+	 * If you want to overload this in a child theme then include a file
+	 * called loop-archives.php and that will be used instead.
+	 */
+	 get_template_part( 'loop', 'archive' );
+?>
 
-			<?php get_template_part( 'loop-meta' ); // Loads the loop-meta.php template. ?>
-
-			<?php if ( have_posts() ) : ?>
-
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php do_atomic( 'before_entry' ); // prototype_before_entry ?>
-
-					<div id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
-
-						<?php do_atomic( 'open_entry' ); // prototype_open_entry ?>
-
-						<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'thumbnail' ) ); ?>
-
-						<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>
-
-						<?php echo apply_atomic_shortcode( 'byline', '<div class="byline">' . __( 'By [entry-author] on [entry-published] [entry-edit-link before=" | "]', hybrid_get_textdomain() ) . '</div>' ); ?>
-
-						<div class="entry-summary">
-							<?php the_excerpt(); ?>
-							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', hybrid_get_textdomain() ), 'after' => '</p>' ) ); ?>
-						</div><!-- .entry-summary -->
-
-						<?php echo apply_atomic_shortcode( 'entry_meta', '<div class="entry-meta">' . __( '[entry-terms taxonomy="category" before="Posted in "] [entry-terms before="| Tagged "] [entry-comments-link before=" | "]', hybrid_get_textdomain() ) . '</div>' ); ?>
-
-						<?php do_atomic( 'close_entry' ); // prototype_close_entry ?>
-
-					</div><!-- .hentry -->
-
-					<?php do_atomic( 'after_entry' ); // prototype_after_entry ?>
-
-				<?php endwhile; ?>
-
-			<?php else : ?>
-
-				<?php get_template_part( 'loop-error' ); // Loads the loop-error.php template. ?>
-
-			<?php endif; ?>
-
-		</div><!-- .hfeed -->
-
-		<?php do_atomic( 'close_content' ); // prototype_close_content ?>
-
-		<?php get_template_part( 'loop-nav' ); // Loads the loop-nav.php template. ?>
-
-	</div><!-- #content -->
-
-	<?php do_atomic( 'after_content' ); // prototype_after_content ?>
-
-<?php get_footer(); // Loads the footer.php template. ?>
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>

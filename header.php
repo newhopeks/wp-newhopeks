@@ -1,76 +1,55 @@
 <?php
 /**
- * Header Template
+ * The Header for our theme.
  *
- * The header template is generally used on every page of your site. Nearly all other templates call it 
- * somewhere near the top of the file. It is used mostly as an opening wrapper, which is closed with the 
- * footer.php file. It also executes key functions needed by the theme, child themes, and plugins. 
+ * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package Prototype
- * @subpackage Template
+ * @package WordPress
+ * @subpackage Starkers
+ * @since Starkers 3.0
  */
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
-<title><?php hybrid_document_title(); ?></title>
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<title><?php
+	/*
+	 * Print the <title> tag based on what is being viewed.
+	 * We filter the output of wp_title() a bit -- see
+	 * twentyten_filter_wp_title() in functions.php.
+	 */
+	wp_title( '|', true, 'right' );
 
-<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="all" />
+	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php
+	/* We add some JavaScript to pages with the comment form
+	 * to support sites with threaded comments (when in use).
+	 */
+	if ( is_singular() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
 
-<script src="<?php echo bloginfo('stylesheet_directory'); ?>/library/js/util.js" type="text/javascript"></script>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" ></script>
-<script src="<?php echo bloginfo('stylesheet_directory'); ?>/library/js/jquery.nivo.slider.pack.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/library/css/nivo-slider.css" type="text/css" media="all" />
-<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/library/css/nivo-slider-custom.css" type="text/css" media="all" />
-
-<?php wp_head(); // wp_head ?>
-
+	/* Always have wp_head() just before the closing </head>
+	 * tag of your theme, or you will break many plugins, which
+	 * generally use this hook to add elements to <head> such
+	 * as styles, scripts, and meta tags.
+	 */
+	wp_head();
+?>
 </head>
 
-<body class="<?php hybrid_body_class(); ?>">
+<body <?php body_class(); ?>>
 
-	<?php do_atomic( 'open_body' ); // prototype_open_body ?>
+	<h1>
+		<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+	</h1>
+	<p><?php bloginfo( 'description' ); ?></p>
 
-	<div id="container">
-
-		<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
-
-		<?php do_atomic( 'before_header' ); // prototype_before_header ?>
-
-		<div id="header">
-
-			<?php do_atomic( 'open_header' ); // prototype_open_header ?>
-
-			<div class="wrap">
-
-				<div id="branding">
-					<?php hybrid_site_title(); ?>
-					<?php hybrid_site_description(); ?>
-				</div><!-- #branding -->
-
-				<?php get_sidebar( 'header' ); // Loads the sidebar-header.php template. ?>
-
-				<?php do_atomic( 'header' ); // prototype_header ?>
-
-			</div><!-- .wrap -->
-
-			<?php do_atomic( 'close_header' ); // prototype_close_header ?>
-
-		</div><!-- #header -->
-
-		<?php do_atomic( 'after_header' ); // prototype_after_header ?>
-
-		<?php get_template_part( 'menu', 'secondary' ); // Loads the menu-secondary.php template. ?>
-
-		<?php do_atomic( 'before_main' ); // prototype_before_main ?>
-
-		<div id="main">
-
-			<div class="wrap">
-
-			<?php do_atomic( 'open_main' ); // prototype_open_main ?>
+	<div id="access" role="navigation">
+	  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
+		<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a>
+		<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
+		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+	</div><!-- #access -->

@@ -1,83 +1,98 @@
 <?php
 /**
- * Attachment Template
+ * The template for displaying attachments.
  *
- * This is the default attachment template.  It is used when visiting the singular view of a post attachment 
- * page (images, videos, audio, etc.).
- *
- * @package Prototype
- * @subpackage Template
+ * @package WordPress
+ * @subpackage Starkers
+ * @since Starkers 3.0
  */
 
-get_header(); // Loads the header.php template. ?>
+get_header(); ?>
 
-	<?php do_atomic( 'before_content' ); // prototype_before_content ?>
+<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-	<div id="content">
+				<p><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'twentyten' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
+					/* translators: %s - title of parent post */
+					printf( __( '<span>&larr;</span> %s', 'twentyten' ), get_the_title( $post->post_parent ) );
+				?></a></p>
 
-		<?php do_atomic( 'open_content' ); // prototype_open_content ?>
+					<h2><?php the_title(); ?></h2>
 
-		<div class="hfeed">
+						<?php
+							printf(__('By %2$s', 'twentyten'),
+								'meta-prep meta-prep-author',
+								sprintf( '<a class="url fn n" href="%1$s" title="%2$s">%3$s</a>',
+									get_author_posts_url( get_the_author_meta( 'ID' ) ),
+									sprintf( esc_attr__( 'View all posts by %s', 'twentyten' ), get_the_author() ),
+									get_the_author()
+								)
+							);
+						?>
+						<span>|</span>
+						<?php
+							printf( __('Published %2$s', 'twentyten'),
+								'meta-prep meta-prep-entry-date',
+								sprintf( '<abbr title="%1$s">%2$s</abbr>',
+									esc_attr( get_the_time() ),
+									get_the_date()
+								)
+							);
+							if ( wp_attachment_is_image() ) {
+								echo ' | ';
+								$metadata = wp_get_attachment_metadata();
+								printf( __( 'Full size is %s pixels', 'twentyten'),
+									sprintf( '<a href="%1$s" title="%2$s">%3$s &times; %4$s</a>',
+										wp_get_attachment_url(),
+										esc_attr( __('Link to full-size image', 'twentyten') ),
+										$metadata['width'],
+										$metadata['height']
+									)
+								);
+							}
+						?>
+						<?php edit_post_link( __( 'Edit', 'twentyten' ), '', '' ); ?>
+					</div><!-- .entry-meta -->
 
-			<?php if ( have_posts() ) : ?>
+<?php if ( wp_attachment_is_image() ) :
+	$attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
+	foreach ( $attachments as $k => $attachment ) {
+		if ( $attachment->ID == $post->ID )
+			break;
+	}
+	$k++;
+	// If there is more than 1 image attachment in a gallery
+	if ( count( $attachments ) > 1 ) {
+		if ( isset( $attachments[ $k ] ) )
+			// get the URL of the next image attachment
+			$next_attachment_url = get_attachment_link( $attachments[ $k ]->ID );
+		else
+			// or get the URL of the first image attachment
+			$next_attachment_url = get_attachment_link( $attachments[ 0 ]->ID );
+	} else {
+		// or, if there's only 1 image attachment, get the URL of the image
+		$next_attachment_url = wp_get_attachment_url();
+	}
+?>
+						<p><a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
+							$attachment_size = apply_filters( 'twentyten_attachment_size', 900 );
+							echo wp_get_attachment_image( $post->ID, array( $attachment_size, 9999 ) ); // filterable image width with, essentially, no limit for image height.
+						?></a></p>
 
-				<?php while ( have_posts() ) : the_post(); ?>
+							<?php previous_image_link( false ); ?>
+							<?php next_image_link( false ); ?>
+<?php else : ?>
+						<a href="<?php echo wp_get_attachment_url(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a>
+<?php endif; ?>
+						<?php if ( !empty( $post->post_excerpt ) ) the_excerpt(); ?>
 
-					<?php do_atomic( 'before_entry' ); // prototype_before_entry ?>
+<?php the_content( __( 'Continue reading &rarr;', 'twentyten' ) ); ?>
+<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
 
-					<div id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
+						<?php twentyten_posted_in(); ?>
+						<?php edit_post_link( __( 'Edit', 'twentyten' ), ' ', '' ); ?>
 
-						<?php do_atomic( 'open_entry' ); // prototype_open_entry ?>
+<?php comments_template(); ?>
 
-						<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>
+<?php endwhile; ?>
 
-						<div class="entry-content">
-							<?php if ( wp_attachment_is_image( get_the_ID() ) ) : ?>
-
-								<p class="attachment-image">
-									<?php echo wp_get_attachment_image( get_the_ID(), 'full', false, array( 'class' => 'aligncenter' ) ); ?>
-								</p><!-- .attachment-image -->
-
-							<?php else : ?>
-
-								<?php hybrid_attachment(); // Function for handling non-image attachments. ?>
-
-								<p class="download">
-									<a href="<?php echo wp_get_attachment_url(); ?>" title="<?php the_title_attribute(); ?>" rel="enclosure" type="<?php echo get_post_mime_type(); ?>"><?php printf( __( 'Download &quot;%1$s&quot;', hybrid_get_textdomain() ), the_title( '<span class="fn">', '</span>', false) ); ?></a>
-								</p><!-- .download -->
-
-							<?php endif; ?>
-
-							<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', hybrid_get_textdomain() ) ); ?>
-							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', hybrid_get_textdomain() ), 'after' => '</p>' ) ); ?>
-						</div><!-- .entry-content -->
-
-						<?php if ( wp_attachment_is_image( get_the_ID() ) ) echo do_shortcode( sprintf( '[gallery id="%1$s" exclude="%2$s" columns="8"]', $post->post_parent, get_the_ID() ) ); ?>
-
-						<?php do_atomic( 'close_entry' ); // prototype_close_entry ?>
-
-					</div><!-- .hentry -->
-
-					<?php do_atomic( 'after_entry' ); // prototype_after_entry ?>
-
-					<?php get_sidebar( 'after-singular' ); // Loads the sidebar-after-singular.php template. ?>
-
-					<?php do_atomic( 'after_singular' ); // prototype_after_singular ?>
-
-					<?php comments_template( '/comments.php', true ); // Loads the comments.php template. ?>
-
-				<?php endwhile; ?>
-
-			<?php endif; ?>
-
-		</div><!-- .hfeed -->
-
-		<?php do_atomic( 'close_content' ); // prototype_close_content ?>
-
-		<?php get_template_part( 'loop-nav' ); // Loads the loop-nav.php template. ?>
-
-	</div><!-- #content -->
-
-	<?php do_atomic( 'after_content' ); // prototype_after_content ?>
-
-<?php get_footer(); // Loads the footer.php template. ?>
+<?php get_footer(); ?>
