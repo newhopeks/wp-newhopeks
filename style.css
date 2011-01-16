@@ -20,60 +20,67 @@ Tags:
     praegnanz.de/weblog/htmlcssjs-kickstart
 */
 
-/*
-  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
-  v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
-  html5doctor.com/html-5-reset-stylesheet/
-*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0b2 | 201101
+   NOTE: THIS IS A BETA VERSION (see previous line)
+   USE WITH CAUTION AND TEST WITH ABANDON */
 
-html, body, div, span, object, iframe,
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font: inherit;
-  vertical-align:baseline;
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display:block;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section
+{
+	display: block;
 }
 
-nav ul { list-style:none; }
+body
+{
+	line-height: 1;
+}
 
-blockquote, q { quotes:none; }
+ol, ul
+{
+	list-style: none;
+}
+
+blockquote, q
+{
+	quotes: none;
+}
 
 blockquote:before, blockquote:after,
-q:before, q:after { content:''; content:none; }
+q:before, q:after
+{
+	content: '';
+	content: none;
+}
 
-a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
-
-ins { background-color:#ff9; color:#000; text-decoration:none; }
-
-mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
-
-del { text-decoration: line-through; }
-
-abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
-
-table { border-collapse:collapse; border-spacing:0; }
-
-hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
-
-input, select { vertical-align:middle; }
+table
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 /* END RESET CSS */
 
@@ -86,22 +93,32 @@ input, select { vertical-align:middle; }
    * we normalize monospace styles ourselves
    * table font-size is reset in the HTML5 reset above so there is no need to repeat
 */
-body { font:13px/1.231 sans-serif; *font-size:small; } /* hack retained to preserve specificity */
+body
+{
+	font: 13px/1.231 sans-serif;
+	*font-size: small; /* hack retained to preserve specificity */
+} 
 
-select, input, textarea, button { font:99% sans-serif; }
+select, input, textarea, button
+{
+	font: 99% sans-serif;
+}
 
 /* normalize monospace sizing
  * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
  */
-pre, code, kbd, samp { font-family: monospace, sans-serif; }
+pre, code, kbd, samp
+{
+	font-family: monospace, sans-serif;
+}
 
 
 /*
  * minimal base styles
  */
 
-
-body, select, input, textarea {
+body, select, input, textarea
+{
   /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
   color: #444;
   /* set your base font here, to apply evenly */
@@ -110,11 +127,10 @@ body, select, input, textarea {
 
 /* headers (h1,h2,etc) have no default font-size or margin,
    you'll want to define those yourself. */
-h1,h2,h3,h4,h5,h6 { font-weight: bold; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 /* always force a scrollbar in non-IE: */
 html { overflow-y: scroll; }
-
 
 /* accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
@@ -122,15 +138,27 @@ a:hover, a:active { outline: none; }
 a, a:active, a:visited { color: #607890; }
 a:hover { color: #036; }
 
-
 ul, ol { margin-left: 2em; }
 ol { list-style-type: decimal; }
 
-/* remove margins for navigation lists */
-nav ul, nav li { margin: 0; }
+/* remove margins & bullets/numbering for navigation lists */
+nav ul, nav ol, nav li
+{
+	list-style: none;
+	margin: 0;
+}
 
 small { font-size: 85%; }
+
 strong, th { font-weight: bold; }
+
+ins { background-color: #ff9; color: #000; text-decoration none; }
+
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
 
 td { vertical-align: top; }
 
@@ -144,6 +172,10 @@ pre {
   white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word;
   padding: 15px;
 }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
 
 textarea { overflow: auto; } /* www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
 
@@ -176,11 +208,11 @@ input:invalid, textarea:invalid {
 /* These selection declarations have to be separate.
    No text-shadow: twitter.com/miketaylr/status/12228805301
    Also: hot pink. */
-::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
-::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+::-moz-selection{ background: #ff5e99; color:#fff; text-shadow: none; }
+::selection { background:#ff5e99; color:#fff; text-shadow: none; }
 
 /*  j.mp/webkit-tap-highlight-color */
-a:link { -webkit-tap-highlight-color: #FF5E99; }
+a:link { -webkit-tap-highlight-color: #ff5e99; }
 
 /* make buttons play nice in IE:
    www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
@@ -189,7 +221,6 @@ button {  width: auto; overflow: visible; }
 /* bicubic resizing for non-native sized IMG:
    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
 .ie7 img { -ms-interpolation-mode: bicubic; }
-
 
 
 /*
@@ -226,17 +257,16 @@ button {  width: auto; overflow: visible; }
 .clearfix { zoom: 1; }
 
 /* These rather presentational classes are generated by WordPress, so it's useful to have some styles for them. Edit as you see fit. More info: http://codex.wordpress.org/CSS */
-.aligncenter { display:block; margin:0 auto }
-.alignleft { float:left }
-.alignright { float:right }
-.wp-caption { border:1px solid #666; text-align:center; background:#ccc; padding:10px; margin:10px }
+.aligncenter { display: block; margin: 0 auto }
+.alignleft { float: left }
+.alignright { float: right }
+.wp-caption { border: 1px solid #666; text-align: center; background: #ccc; padding: 10px; margin: 10px }
 
 
 
 
  /* Primary Styles
-    Author:
- */
+  */
 
 
 
@@ -295,4 +325,3 @@ button {  width: auto; overflow: visible; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3{ page-break-after: avoid; }
 }
-
