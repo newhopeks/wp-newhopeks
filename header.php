@@ -52,7 +52,7 @@
   <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
  
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-  <script src="js/libs/modernizr-1.6.min.js"></script>
+  <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/libs/modernizr-1.6.min.js"></script>
 	
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
