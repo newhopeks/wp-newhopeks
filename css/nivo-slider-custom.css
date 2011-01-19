@@ -2,20 +2,22 @@
 /*=== Custom Slider Styles ===*/
 /*============================*/
 #slider-wrapper {
-    background:url(../images/slider/slider.png) no-repeat;
+    /*background:url(../images/slider/slider.png) no-repeat;
     width:998px;
     height:392px;
     margin:0 auto;
     padding-top:74px;
-    margin-top:-45px;
+    margin-top:-45px;*/
+    margin-left: 28px;
+    width: 640px;
 }
 
 #slider {
 	position:relative;
-    width:618px!important;
-    height:246px!important;
+    width:640px!important;
+    height:340px!important;
     overflow: hidden;
-    margin-left:190px;
+    /*margin-left:190px;*/
 	background:url(../images/slider/loading.gif) no-repeat 50% 50%;
 }
 #slider img {

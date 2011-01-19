@@ -11,36 +11,52 @@
 
 get_header(); /* Loads the header.php template. */ ?>
 	
-	<section class="content">
-	
-		<div id="slider-wrapper">
-        <div id="slider" class="nivoSlider">
-        </div>
+<section class="featured">
+  <div class="span-7">
+    <ul class="left_bar">
+        <li>
+            <span class="inner">
+            what to expect
+            </span>
+        </li>
+        <li>
+            <span class="inner">
+            get in touch
+            </span>
+        </li>
+        <li>
+            <span class="inner">
+            what we believe
+            </span>
+        </li>
+    </ul>
+  </div>
+
+  <div class="span-17 last">
+    <div id="slider-wrapper" class="border1">
+      <div id="slider" class="nivoSlider">
+      </div>
     </div>
+  </div>
+  <div class="clear"></div>
 
-		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-		<article>
-			<header>
-			<?php if ( is_front_page() ) { ?>
-				<h2><?php the_title(); ?></h2>
-			<?php } else { ?>
-				<h1><?php the_title(); ?></h1>
-			<?php } ?>
-			</header>
-			<?php the_content(); ?>
-			<footer>
-				<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
-				<?php edit_post_link( __( 'Edit', 'twentyten' ), '', '' ); ?>
-				<?php comments_template( '', true ); ?>
-			</footer>
-		</article>
-   <?php endwhile; ?>
-   </section><?php /* .content */ ?>
+  <div class="span-12">
+      <div class="latest_event">upcoming event</div>
+  </div>
+  <div class="span-12 last">
+      <div class="latest_audio">most recent message/audio</div>
+  </div>
+  <div class="clear"></div>
 
-<?php get_sidebar(); ?>
+
+  <div class="span-24 last">
+    Footer
+  </div>
+</section>
+
 <?php get_footer(); ?>
 
-
+<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/jquery.nivo.slider.pack.js"></script>
 <script>
 // setup variables
 var apiKey = 'a618d5006f9544eb47212249d1c1323f';

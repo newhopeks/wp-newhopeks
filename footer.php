@@ -10,7 +10,7 @@
  * @since Starkers 3.0
  */
 ?>
-		<footer>
+		<footer id="footer">
 		<?php
 			/* A sidebar in the footer? Yep. You can can customize
 			 * your footer with four columns of widgets.
@@ -18,8 +18,52 @@
 			get_sidebar( 'footer' );
 		?>
 	
+        <div class="span-4">
+            <h4>About</h4>
+            <ul class="footer_menu">
+                <li><a href="#">Our <strong>Story</strong></a></li>
+                <li><a href="#">What we <strong>Believe</strong></a></li>
+                <li><a href="#">Central <strong>Gathering</strong> (when, where)</a></li>
+                <li><a href="#">Pastoral <strong>Team</strong></a></li>
+            </ul>
+        </div>
+        <div class="span-4">
+            <h4>Ministries</h4>
+            <ul class="footer_menu">
+                <li><a href="#">KidsLIFE (ages 0-5)</a></li>
+                <li><a href="#">Fusion (ages...)</a></li>
+                <li><a href="#">International</a></li>
+                <li><a href="#">Volunteer</a></li>
+            </ul>
+        </div>
+        <div class="span-4">
+            <h4>LIFE Groups</h4>
+            <ul class="footer_menu">
+                <li><a href="#">What they are</a></li>
+                <li><a href="#">Where they meet</a></li>
+                <li><a href="#">Why they exist</a></li>
+                <li><a href="#">JOIN</a></li>
+            </ul>
+        </div>
+        <div class="span-2">
+            <h4>Contribute</h4>
+            <ul class="footer_menu">
+                <li><a href="#">Ideas</a></li>
+                <li><a href="#">Time</a></li>
+                <li><a href="#">Money</a></li>
+                <li><a href="#">Stories</a></li>
+            </ul>
+        </div>
+        <div class="span-4 align_right">
+            <h4>CONTACT US</h4>
+            <h4>EVENTS</h4>
+            <h4>RESOURCES</h4>
+        </div>
+        <div class="span-6 last align_right">
+            <img src="<?php bloginfo( 'stylesheet_directory' ); ?>/images/map.png" style="border: solid 3px #ccc;" />
+        </div>
+
 			<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform" rel="generator">Proudly powered by WordPress </a>
 		</footer>
 	</div><?php /* .container */ ?>
 

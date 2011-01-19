@@ -45,12 +45,21 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   -->
   
-	<!-- CSS : implied media="all" -->
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=2" />
-	
-	<!-- Uncomment if you are specifically targeting less enabled mobile browsers
-  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
- 
+  <!-- HTML5 Boilerplate CSS : implied media="all" -->
+  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=2" />
+  
+  <!-- blueprint CSS -->
+  <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/blueprint/print.css" type="text/css" media="print">
+  <!--[if lt IE 8]>
+    <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/blueprint/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  
+  <!-- nivo slider CSS -->
+  <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/nivo-slider.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/nivo-slider-custom.css" type="text/css" media="screen, projection">
+    
+
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/libs/modernizr-1.6.min.js"></script>
 	
@@ -73,20 +82,30 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="container">
+	
+	<div id="fixed_nav">
+      <div class="container">
+          <div class="first span-4"><a href="/">NewHopeKs.org</a></div>
+          <div class="last prepend-6 span-14 align_right">
+              <a href="/when">Sunday at <strong>10:15am</strong></a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/directions">Get <strong>Directions</strong></a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/LIFE/join"><strong>Join</strong> a LIFE Group</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/central-gathering/latest"><strong>Listen</strong> to Sunday's Message</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/give"><strong>Give</strong></a>
+          </div>
+      </div>
+  </div>
+
+	<div id="container" class="container">
 		<header>
-			<hgroup>
-				<h1>
+			<hgroup class="span-8">
+				<h1 class="logo">
 					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 				</h1>
-				<h2><?php bloginfo( 'description' ); ?></h2>
 			</hgroup>
-			<nav role="main">
-				<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-				<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a>
+			<nav role="main" class="span-16 last align-right">
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
 				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+        <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
+        <a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a>
 			</nav>
 		</header>
+  <div class="clear"></div>
 
 	
