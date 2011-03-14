@@ -21,7 +21,7 @@
         <div class="span-4">
             <h4>About</h4>
             <ul class="footer_menu">
-                <li><a href="#">Our <strong>Story</strong></a></li>
+                <li><a href="about#mission">Mission</a> / <a href="about#vision">Vison</a> / <a href="about#values"><strong>Values</strong></a></li>
                 <li><a href="#">What we <strong>Believe</strong></a></li>
                 <li><a href="#">Central <strong>Gathering</strong> (when, where)</a></li>
                 <li><a href="#">Pastoral <strong>Team</strong></a></li>
