@@ -1,0 +1,10 @@
+﻿#sidebar-right{
+    float: right;
+    width: 230px;
+    padding: 10px;
+}
+
+#content{
+    float:left;
+    width: 700px;
+}

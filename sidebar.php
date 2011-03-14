@@ -7,7 +7,7 @@
  * @since Starkers 3.0
  */
 ?>
-
+<div id="sidebar-right">
 			<ul class="xoxo">
 
 <?php
@@ -50,3 +50,4 @@
 			</ul>
 
 <?php endif; ?>
+</div>

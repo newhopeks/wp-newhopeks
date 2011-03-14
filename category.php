@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-				<h1><?php
+				<h1>CAT <?php
 					printf( __( 'Category Archives: %s', 'twentyten' ), '' . single_cat_title( '', false ) . '' );
 				?></h1>
 				<?php

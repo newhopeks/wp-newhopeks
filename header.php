@@ -58,6 +58,9 @@
   <!-- nivo slider CSS -->
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/nivo-slider.css" type="text/css" media="screen, projection">
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/nivo-slider-custom.css" type="text/css" media="screen, projection">
+  
+  <!-- site CSS -->
+  <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/site.css" type="text/css" media="screen, projection">
     
 
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
