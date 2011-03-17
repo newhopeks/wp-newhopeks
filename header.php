@@ -99,7 +99,9 @@
 		<header>
 			<hgroup class="span-8">
 				<h1 class="logo">
-					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                        <img src="<?php bloginfo( 'stylesheet_directory' ); ?>/images/logo.gif" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"    
+                    </a>
 				</h1>
 			</hgroup>
 			<nav role="main" class="span-16 last align-right">
