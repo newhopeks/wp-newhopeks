@@ -50,7 +50,7 @@ get_header(); /* Loads the header.php template. */ ?>
 
 
   <div class="span-24 last">
-    Footer
+    &nbsp;
   </div>
 </section>
 
