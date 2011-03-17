@@ -21,49 +21,51 @@
         <div class="span-4">
             <h4>About</h4>
             <ul class="footer_menu">
-                <li><a href="about#mission">Mission</a> / <a href="about#vision">Vison</a> / <a href="about#values"><strong>Values</strong></a></li>
-                <li><a href="#">What we <strong>Believe</strong></a></li>
-                <li><a href="#">Central <strong>Gathering</strong> (when, where)</a></li>
-                <li><a href="#">Pastoral <strong>Team</strong></a></li>
+                <li><a href="/about#mission">Mission</a> / <a href="/about#vision">Vison</a> / <a href="/about#values"><strong>Values</strong></a></li>
+                <li><a href="/statement-of-faith">What we <strong>Believe</strong></a></li>
+                <li><a href="/central-gathering">Central <strong>Gathering</strong> (when, where)</a></li>
+                <li><a href="/staff-biographies">Pastoral <strong>Team</strong></a></li>
             </ul>
         </div>
         <div class="span-4">
             <h4>Ministries</h4>
             <ul class="footer_menu">
-                <li><a href="#">KidsLIFE (ages 0-5)</a></li>
-                <li><a href="#">Fusion (ages...)</a></li>
-                <li><a href="#">International</a></li>
-                <li><a href="#">Volunteer</a></li>
+                <li><a href="/ministries/kids">KidsLIFE (ages 0-5)</a></li>
+                <li><a href="/ministries/fusion">Fusion (ages...)</a></li>
+                <li><a href="/ministries/glocal">International</a></li>
+                <li><a href="/ministries/volunteer">Volunteer</a></li>
             </ul>
         </div>
         <div class="span-4">
             <h4>LIFE Groups</h4>
             <ul class="footer_menu">
-                <li><a href="#">What they are</a></li>
-                <li><a href="#">Where they meet</a></li>
-                <li><a href="#">Why they exist</a></li>
-                <li><a href="#">JOIN</a></li>
+                <li><a href="/ministries/life-groups#what">What they are</a></li>
+                <li><a href="/ministries/life-groups#where">Where they meet</a></li>
+                <li><a href="/ministries/life-groups#why">Why they exist</a></li>
+                <li><a href="/ministries/life-groups#join">JOIN</a></li>
             </ul>
         </div>
         <div class="span-2">
             <h4>Contribute</h4>
             <ul class="footer_menu">
-                <li><a href="#">Ideas</a></li>
-                <li><a href="#">Time</a></li>
-                <li><a href="#">Money</a></li>
-                <li><a href="#">Stories</a></li>
+                <li><a href="/contribute#ideas">Ideas</a></li>
+                <li><a href="/contribute#time">Time</a></li>
+                <li><a href="/contribute#money">Money</a></li>
+                <li><a href="/contribute#stories">Stories</a></li>
             </ul>
         </div>
         <div class="span-4 align_right">
-            <h4>CONTACT US</h4>
-            <h4>EVENTS</h4>
-            <h4>RESOURCES</h4>
+            <h4><a href="/contact-us">CONTACT US</a></h4>
+            <h4><a href="/events">EVENTS</a></h4>
+            <h4><a href="/resources">RESOURCES</a></h4>
         </div>
         <div class="span-6 last align_right">
-            <img src="<?php bloginfo( 'stylesheet_directory' ); ?>/images/map.png" style="border: solid 3px #ccc;" />
+            <a title="Map to New Hope Central Gathering" href="http://maps.google.com/maps?f=q&amp;hl=en&amp;q=3905+Green+Valley+Rd,+Manhattan,+KS&amp;ie=UTF8&amp;z=15&amp;om=1&amp;iwloc=addr" target="_blank">
+            <img alt="Map to New Hope Central Gathering" src="<?php bloginfo( 'stylesheet_directory' ); ?>/images/map.png" style="border: solid 3px #ccc;" />
+            </a>
         </div>
 
-			<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			<a href="<?php echo home_url( '/' ) ?>" title="New Hope Church" rel="home">NewHopeKs.org</a>
 		</footer>
 	</div><?php /* .container */ ?>
 

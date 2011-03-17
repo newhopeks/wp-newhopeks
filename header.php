@@ -90,7 +90,7 @@
       <div class="container">
           <div class="first span-4"><a href="/">NewHopeKs.org</a></div>
           <div class="last prepend-6 span-14 align_right">
-              <a href="/when">Sunday at <strong>10:15am</strong></a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/directions">Get <strong>Directions</strong></a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/LIFE/join"><strong>Join</strong> a LIFE Group</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/central-gathering/latest"><strong>Listen</strong> to Sunday's Message</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/give"><strong>Give</strong></a>
+              <a href="/central-gathering">Sunday at <strong>10:00am</strong></a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/central-gathering#where">Get <strong>Directions</strong></a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/ministries/life-groups#join"><strong>Join</strong> a LIFE Group</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/messages#latest"><strong>Listen</strong> to Sunday's Message</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/contribute"><strong>Give</strong></a>
           </div>
       </div>
   </div>
@@ -106,7 +106,6 @@
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
 				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
         <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-        <a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a>
 			</nav>
 		</header>
   <div class="clear"></div>
