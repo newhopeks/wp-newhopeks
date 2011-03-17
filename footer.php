@@ -30,10 +30,10 @@
         <div class="span-4">
             <h4>Ministries</h4>
             <ul class="footer_menu">
-                <li><a href="/ministries/kids">KidsLIFE (ages 0-5)</a></li>
+                <li><a href="/ministries/kidslife">KidsLIFE (ages 0-5)</a></li>
                 <li><a href="/ministries/fusion">Fusion (ages...)</a></li>
-                <li><a href="/ministries/glocal">International</a></li>
-                <li><a href="/ministries/volunteer">Volunteer</a></li>
+                <li><a href="/ministries/international">International</a></li>
+                <li><a href="/ministries#volunteer">Volunteer</a></li>
             </ul>
         </div>
         <div class="span-4">
@@ -55,7 +55,7 @@
             </ul>
         </div>
         <div class="span-4 align_right">
-            <h4><a href="/contact-us">CONTACT US</a></h4>
+            <h4><a href="/contact">CONTACT US</a></h4>
             <h4><a href="/events">EVENTS</a></h4>
             <h4><a href="/resources">RESOURCES</a></h4>
         </div>
@@ -65,7 +65,7 @@
             </a>
         </div>
 
-			<a href="<?php echo home_url( '/' ) ?>" title="New Hope Church" rel="home">NewHopeKs.org</a>
+			<a href="<?php echo home_url( '/' ) ?>" title="New Hope Church" rel="home">NewHopeKs.org</a> | <a href="/privacy-policy">Privacy</a>
 		</footer>
 	</div><?php /* .container */ ?>
 
