@@ -8,3 +8,6 @@
     float:left;
     width: 700px;
 }
+
+ul.menu{ list-style-type: none; float: right; }
+ul.menu li{ float: left; margin-left: 10px; }
