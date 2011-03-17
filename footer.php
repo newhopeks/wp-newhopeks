@@ -22,9 +22,9 @@
             <h4>About</h4>
             <ul class="footer_menu">
                 <li><a href="/about#mission">Mission</a> / <a href="/about#vision">Vison</a> / <a href="/about#values"><strong>Values</strong></a></li>
-                <li><a href="/statement-of-faith">What we <strong>Believe</strong></a></li>
-                <li><a href="/central-gathering">Central <strong>Gathering</strong> (when, where)</a></li>
-                <li><a href="/staff-biographies">Pastoral <strong>Team</strong></a></li>
+                <li><a href="/about/statement-of-faith">What we <strong>Believe</strong></a></li>
+                <li><a href="/about/central-gathering">Central <strong>Gathering</strong> (when, where)</a></li>
+                <li><a href="/about/team">Pastoral <strong>Team</strong></a></li>
             </ul>
         </div>
         <div class="span-4">

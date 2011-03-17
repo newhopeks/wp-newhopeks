@@ -32,7 +32,6 @@ get_header(); ?>
 		<?php edit_post_link( __( 'Edit', 'twentyten' ), '', '' ); ?>
 	</footer>
 </article>
-<?php comments_template( '', true ); ?>
 	
 <?php endwhile; ?>
 </div>
