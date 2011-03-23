@@ -22,17 +22,17 @@
             <h4>About</h4>
             <ul class="footer_menu">
                 <li><a href="/about#mission">Mission</a> / <a href="/about#vision">Vison</a> / <a href="/about#values"><strong>Values</strong></a></li>
-                <li><a href="/about/statement-of-faith">What we <strong>Believe</strong></a></li>
-                <li><a href="/about/central-gathering">Central <strong>Gathering</strong> (when, where)</a></li>
-                <li><a href="/about/team">Pastoral <strong>Team</strong></a></li>
+                <li><a href="/about/statement-of-faith/">What we <strong>Believe</strong></a></li>
+                <li><a href="/about/central-gathering/">Central <strong>Gathering</strong> (when, where)</a></li>
+                <li><a href="/about/team/">Pastoral <strong>Team</strong></a></li>
             </ul>
         </div>
         <div class="span-4">
             <h4>Ministries</h4>
             <ul class="footer_menu">
-                <li><a href="/ministries/kidslife">KidsLIFE (ages 0-5)</a></li>
-                <li><a href="/ministries/fusion">Fusion (ages...)</a></li>
-                <li><a href="/ministries/international">International</a></li>
+                <li><a href="/ministries/kidslife/">KidsLIFE (ages 0-5)</a></li>
+                <li><a href="/ministries/fusion/">Fusion (ages...)</a></li>
+                <li><a href="/ministries/international/">International</a></li>
                 <li><a href="/ministries#volunteer">Volunteer</a></li>
             </ul>
         </div>
