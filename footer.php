@@ -55,9 +55,9 @@
             </ul>
         </div>
         <div class="span-4 align_right">
-            <h4><a href="/contact">CONTACT US</a></h4>
-            <h4><a href="/events">EVENTS</a></h4>
-            <h4><a href="/resources">RESOURCES</a></h4>
+            <h4><a href="/contact/">CONTACT US</a></h4>
+            <h4><a href="/events/">EVENTS</a></h4>
+            <h4><a href="/resources/">RESOURCES</a></h4>
         </div>
         <div class="span-6 last align_right">
             <a title="Map to New Hope Central Gathering" href="http://maps.google.com/maps?f=q&amp;hl=en&amp;q=3905+Green+Valley+Rd,+Manhattan,+KS&amp;ie=UTF8&amp;z=15&amp;om=1&amp;iwloc=addr" target="_blank">

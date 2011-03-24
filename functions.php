@@ -281,7 +281,11 @@ add_filter( 'excerpt_more', 'twentyten_auto_excerpt_more' );
  * @return string Excerpt with a pretty "Continue Reading" link
  */
 function twentyten_custom_excerpt_more( $output ) {
+    global $post;
 	if ( has_excerpt() && ! is_attachment() ) {
+        // don't show continue link for nh_message types
+        if( post_type_exists('nh_message') && $post->post_type == 'nh_message' ){ return $output; }
+        // add continue link for all others
 		$output .= twentyten_continue_reading_link();
 	}
 	return $output;
@@ -566,3 +570,7 @@ function create_nh_taxonomies(){
    	
 	register_taxonomy('series', 'nh_message', $args);
 }
+
+/* apply shortcodes to the_excerpt() calls */
+add_filter( 'the_excerpt', 'shortcode_unautop');
+add_filter( 'the_excerpt', 'do_shortcode');

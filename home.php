@@ -44,7 +44,29 @@ get_header(); /* Loads the header.php template. */ ?>
       <div class="latest_event">upcoming event</div>
   </div>
   <div class="span-12 last">
-      <div class="latest_audio">most recent message/audio</div>
+      <div class="latest_audio">
+        <?php 
+            $args = array( 'numberposts' => 1, 'post_type' => 'nh_message' );
+            $lastposts = get_posts( $args );
+            foreach($lastposts as $post) : setup_postdata($post); ?>           
+            <div class="recent-message-title">Listen to the our most recent message - <em><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></em></div>
+		    <div class="audio-player"><?php the_excerpt(); ?></div>
+            <?php
+                $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
+                $attachments = get_posts($args);
+                if ($attachments) {
+                    foreach ( $attachments as $attachment ) {
+                        apply_filters( 'the_title' , $attachment->post_title );?>
+                        <div class="slides-link">
+                            <?php echo wp_get_attachment_link( $attachment->ID, '' , false, false, 'Download Slides'); ?>
+                        </div> 
+                        <?php
+                    }
+                }
+            ?>
+        <?php endforeach; ?>
+        <div class="read-all"><a href="/messages/">Browse all messages...</a></div>
+        </div>
   </div>
   <div class="clear"></div>
 
