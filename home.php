@@ -21,7 +21,7 @@ get_header(); /* Loads the header.php template. */ ?>
         </li>
         <li>
             <span class="inner">
-            get in touch
+            resources
             </span>
         </li>
         <li>

@@ -21,8 +21,8 @@
         <div class="span-4">
             <h4>About</h4>
             <ul class="footer_menu">
-                <li><a href="/about#mission">Mission</a> / <a href="/about#vision">Vison</a> / <a href="/about#values"><strong>Values</strong></a></li>
-                <li><a href="/about/statement-of-faith/">What we <strong>Believe</strong></a></li>
+                <li><a href="/about#mission">Mission</a> / <a href="/about#vision">Vison</a> / <a href="/about#emphasas"><strong>Values</strong></a></li>
+                <li><a href="/about/core-beliefs/">What we <strong>Believe</strong></a></li>
                 <li><a href="/about/central-gathering/">Central <strong>Gathering</strong> (when, where)</a></li>
                 <li><a href="/about/team/">Pastoral <strong>Team</strong></a></li>
             </ul>
@@ -39,10 +39,10 @@
         <div class="span-4">
             <h4>LIFE Groups</h4>
             <ul class="footer_menu">
-                <li><a href="/ministries/life-groups#what">What they are</a></li>
-                <li><a href="/ministries/life-groups#where">Where they meet</a></li>
-                <li><a href="/ministries/life-groups#why">Why they exist</a></li>
-                <li><a href="/ministries/life-groups#join">JOIN</a></li>
+                <li><a href="/life-groups#what">What they are</a></li>
+                <li><a href="/life-groups#where">Where they meet</a></li>
+                <li><a href="/life-groups#why">Why they exist</a></li>
+                <li><a href="/life-groups#join">JOIN</a></li>
             </ul>
         </div>
         <div class="span-2">
