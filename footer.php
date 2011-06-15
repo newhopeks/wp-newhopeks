@@ -56,7 +56,7 @@
         </div>
         <div class="span-4 align_right">
             <h4><a href="/contact/">CONTACT US</a></h4>
-            <h4><a href="/events/">EVENTS</a></h4>
+            <h4><a href="/calendar/">EVENTS</a></h4>
             <h4><a href="/resources/">RESOURCES</a></h4>
         </div>
         <div class="span-6 last align_right">
