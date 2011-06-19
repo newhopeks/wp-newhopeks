@@ -537,7 +537,10 @@ function nh_custom_init()
     'hierarchical' => false,
     'menu_position' => null,
     'supports' => array('title','editor','author','thumbnail','excerpt','comments', ),
-    'taxonomies' => array('post_tag', )
+    'taxonomies' => array('post_tag', ),
+        'rewrite' => array(
+            'slug' => 'messages', // Use "messages" instead of "nh_messages" in permalinks
+         )
   ); 
   register_post_type('nh_message',$args);
 
@@ -569,6 +572,33 @@ function create_nh_taxonomies(){
 	);
    	
 	register_taxonomy('series', 'nh_message', $args);
+}
+
+/* custom post type for resources */
+add_action('init', 'register_rc', 1); // Set priority to avoid plugin conflicts
+
+function register_rc() { 
+ 	$labels = array( // Used in the WordPress admin
+		'name' => _x('Resources', 'post type general name'),
+		'singular_name' => _x('Resource', 'post type singular name'),
+		'add_new' => _x('Add New', 'Resource'),
+		'add_new_item' => __('Add New Resource'),
+		'edit_item' => __('Edit Resource'),
+		'new_item' => __('New Resource'),
+		'view_item' => __('View Resource '),
+		'search_items' => __('Search Resources'),
+		'not_found' =>  __('Nothing found'),
+		'not_found_in_trash' => __('Nothing found in Trash')
+	);
+	$args = array(
+		'labels' => $labels, // Set above
+		'public' => true, // Make it publicly accessible
+		'hierarchical' => false, // No parents and children here
+		'menu_position' => 5, // Appear right below "Posts"
+		'has_archive' => 'resources', // Activate the archive
+		'supports' => array('title','editor','comments','thumbnail','custom-fields'),
+	);
+	register_post_type( 'resource', $args ); // Create the post type, use options above
 }
 
 /* apply shortcodes to the_excerpt() calls */

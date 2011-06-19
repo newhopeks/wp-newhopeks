@@ -90,7 +90,7 @@
       <div class="container">
           <div class="first span-4"><a href="/">NewHopeKs.org</a></div>
           <div class="last prepend-6 span-14 align_right">
-              <a href="/about/central-gathering">Sunday at <strong>10:00am</strong></a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/about/central-gathering#where">Get <strong>Directions</strong></a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/ministries/life-groups#join"><strong>Join</strong> a LIFE Group</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/messages#latest"><strong>Listen</strong> to Sunday's Message</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/contribute"><strong>Give</strong></a>
+              <a href="/about/central-gathering">Sunday at <strong>10:00am</strong></a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/about/central-gathering#where">Get <strong>Directions</strong></a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/life-groups#join"><strong>Join</strong> a LIFE Group</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/messages#latest"><strong>Listen</strong> to Sunday's Message</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/contribute"><strong>Give</strong></a>
           </div>
       </div>
   </div>
