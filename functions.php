@@ -597,6 +597,9 @@ function register_rc() {
 		'menu_position' => 5, // Appear right below "Posts"
 		'has_archive' => 'resources', // Activate the archive
 		'supports' => array('title','editor','comments','thumbnail','custom-fields'),
+        'rewrite' => array(
+            'slug' => 'resources', // Use "resources" in permalinks
+         )
 	);
 	register_post_type( 'resource', $args ); // Create the post type, use options above
 }
