@@ -294,8 +294,11 @@ button {  width: auto; overflow: visible; }
 .left_bar{ list-style-type: none; margin: 0; padding: 0; }
 .left_bar li{ margin: 0 0 16px 0; display: block; border: solid 1px #666; padding: 10px; background: #efefef; height: 86px; }
 
-.latest_event{ background: #ccc; border: solid 1px; height: 100px; }
-.latest_audio{ background: #ccc; border: solid 1px; height: 100px;  }
+.latest_event{ background: #eee; height: 100px; padding: 15px; }
+.latest_audio{ background: #eee; height: 100px; padding: 15px; }
+.subscribe_section{text-align: right;}
+
+
 
 #footer{ float: left; width: 100%; padding-top:20px; border-top: dashed 1px #ccc; margin-top: 35px; margin-bottom: 10px; }
 #footer h4{ margin-bottom: 5px; }

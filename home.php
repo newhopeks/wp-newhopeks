@@ -49,7 +49,8 @@ get_header(); /* Loads the header.php template. */ ?>
             $args = array( 'numberposts' => 1, 'post_type' => 'nh_message' );
             $lastposts = get_posts( $args );
             foreach($lastposts as $post) : setup_postdata($post); ?>           
-            <div class="recent-message-title">Listen to the our most recent message - <em><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></em></div>
+            <h4 class="recent-message-header">Listen to the our most recent audio below or <a href="/messages/">browse all messages.</a></h4>
+            <div class="recent-message-title"><em><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></em></div>
 		    <div class="audio-player"><?php the_excerpt(); ?></div>
             <?php
                 $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
@@ -65,7 +66,7 @@ get_header(); /* Loads the header.php template. */ ?>
                 }
             ?>
         <?php endforeach; ?>
-        <div class="read-all"><a href="/messages/">Browse all messages...</a></div>
+        <div class="subscribe_section"><em><a href=itpc://<?php echo $_SERVER["HTTP_HOST"]?>/messages/feed/podcast>Subcribe</a> to New Hope audio on <a href=itpc://<?php echo $_SERVER["HTTP_HOST"]?>/messages/feed/podcast>iTunes</a> or via <a href=/messages/feed/rss>rss</a>.</em></div>
         </div>
   </div>
   <div class="clear"></div>
