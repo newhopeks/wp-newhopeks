@@ -40,10 +40,41 @@ get_header(); /* Loads the header.php template. */ ?>
   </div>
   <div class="clear"></div>
 
-  <div class="span-12">
-      <div class="latest_event">upcoming event</div>
+  <div class="span-12 module">
+      <div class="latest_event">
+        <h4>New Hope Events this week.</h4>
+        <ul class="event_list">
+      <?php if(function_exists('fetch_feed')) {
+        
+            include_once(ABSPATH . WPINC . '/feed.php');               // include the required file
+            $feed = fetch_feed('http://newhope.daptivate.com/calendar/rss/rss2.0.php?cal=https%253A%252F%252Fwww.google.com%252Fcalendar%252Fical%252Fnewhopeks%2540gmail.com%252Fpublic%252Fbasic.ics&cpath=&rssview=week'); // specify the source feed
+        
+            $limit = $feed->get_item_quantity(7); // specify number of items
+            $items = $feed->get_items(0, $limit); // create an array of items
+        
+        }
+        if ($limit == 0) echo '<div>Oops.  There was a problem.</div>';
+        else foreach ($items as $item) : ?>
+        
+                <?php 
+                    list($dtString, $titleText) = split(':', $item->get_title());
+                    list($day, $month, $dayNum, $year) = split(' ', $dtString);
+                ?>
+        <li class="event_wrapper">
+            <?php echo "<span class=day>$day</span>"; ?>
+            <a href="<?php echo $item->get_permalink(); ?>" 
+            title="<?php echo $item->get_date('j F Y @ g:i a'); ?>">
+                <?php echo "$titleText"; ?>
+            </a>
+        </li>
+        
+        <?php endforeach; ?>
+        </ul>
+        <div class="clear"></div>
+        <div class="subscribe_section"><em><a href="https://www.google.com/calendar/ical/newhopeks%40gmail.com/public/basic.ics">Subscribe</a> or browse <a href="/calendar">all events</a>.</em></div>
+      </div>
   </div>
-  <div class="span-12 last">
+  <div class="span-12 last module">
       <div class="latest_audio">
         <?php 
             $args = array( 'numberposts' => 1, 'post_type' => 'nh_message' );

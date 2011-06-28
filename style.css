@@ -298,7 +298,11 @@ button {  width: auto; overflow: visible; }
 .latest_audio{ background: #eee; height: 100px; padding: 15px; }
 .subscribe_section{text-align: right;}
 
+.event_list{list-style-position: outside; list-style-type: none; margin: 0; padding: 0; font-size: 11px;}
+.event_list li {float: left; margin: 0 5px 5px 0; width: 210px;}
+.event_list li .day{font-weight: bold; font-size: 1.1em; padding-right: 2px; width: 30px; display: inline-block; text-align: right; }
 
+.module h4{ margin-bottom: 7px; }
 
 #footer{ float: left; width: 100%; padding-top:20px; border-top: dashed 1px #ccc; margin-top: 35px; margin-bottom: 10px; }
 #footer h4{ margin-bottom: 5px; }
