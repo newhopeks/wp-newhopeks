@@ -49,7 +49,7 @@ get_header(); /* Loads the header.php template. */ ?>
             include_once(ABSPATH . WPINC . '/feed.php');               // include the required file
             $feed = fetch_feed('http://newhope.daptivate.com/calendar/rss/rss2.0.php?cal=https%253A%252F%252Fwww.google.com%252Fcalendar%252Fical%252Fnewhopeks%2540gmail.com%252Fpublic%252Fbasic.ics&cpath=&rssview=week'); // specify the source feed
         
-            $limit = $feed->get_item_quantity(7); // specify number of items
+            $limit = $feed->get_item_quantity(6); // specify number of items
             $items = $feed->get_items(0, $limit); // create an array of items
         
         }
