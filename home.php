@@ -63,7 +63,7 @@ get_header(); /* Loads the header.php template. */ ?>
         <li class="event_wrapper">
             <?php echo "<span class=day>$day</span>"; ?>
             <a href="<?php echo $item->get_permalink(); ?>" 
-            title="<?php echo $item->get_date('j F Y @ g:i a'); ?>">
+            title="<?php echo "$dayNum $month $year"; ?>">
                 <?php echo "$titleText"; ?>
             </a>
         </li>
