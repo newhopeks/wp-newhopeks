@@ -10,40 +10,29 @@
  */
 
 get_header(); /* Loads the header.php template. */ ?>
-	
-<section class="featured">
-  <div class="span-7">
-    <ul class="left_bar">
-        <li>
-            <span class="inner">
-            what to expect
-            </span>
-        </li>
-        <li>
-            <span class="inner">
-            resources
-            </span>
-        </li>
-        <li>
-            <span class="inner">
-            what we believe
-            </span>
-        </li>
-    </ul>
-  </div>
 
-  <div class="span-17 last">
-    <div id="slider-wrapper" class="border1">
-      <div id="slider" class="nivoSlider">
+	<div id="main" role="main">
+		<section id="hero" class="clearfix">
+			<div class="image">
+			  <div id="slider-wrapper" class="border1">
+          <div id="slider" class="nivoSlider">
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="clear"></div>
-
-  <div class="span-12 module">
-      <div class="latest_event">
-        <h4>New Hope Events this week.</h4>
-        <ul class="event_list">
+			</div>
+			<ol class="semanticList">
+				<li><a href="#">What to Expect</a></li>
+				<li><a href="#">Resources</a></li>
+				<li><a href="#">What We Believe</a></li>
+			</ol>
+		</section>
+		
+		<div class="widgets clearfix">
+			<section class="widget upcoming">
+				<header>
+					<h3>Upcoming Events</h3>
+				</header>
+				
+        <div>
       <?php if(function_exists('fetch_feed')) {
         
             include_once(ABSPATH . WPINC . '/feed.php');               // include the required file
@@ -60,28 +49,34 @@ get_header(); /* Loads the header.php template. */ ?>
                     list($dtString, $titleText) = split(':', $item->get_title());
                     list($day, $month, $dayNum, $year) = split(' ', $dtString);
                 ?>
-        <li class="event_wrapper">
-            <?php echo "<span class=day>$day</span>"; ?>
-            <a href="<?php echo $item->get_permalink(); ?>" 
+        <article class="event">
+          <time datetime=""><?php echo "<abbr title=$month >$month</abbr>$dayNum</time>"; ?>
+          <h3><a href="<?php echo $item->get_permalink(); ?>" 
             title="<?php echo "$dayNum $month $year"; ?>">
                 <?php echo "$titleText"; ?>
-            </a>
-        </li>
+            </a></h3>
+        </article>
         
         <?php endforeach; ?>
-        </ul>
-        <div class="clear"></div>
-        <div class="subscribe_section"><em><a href="https://www.google.com/calendar/ical/newhopeks%40gmail.com/public/basic.ics">Subscribe</a> or browse <a href="/calendar">all events</a>.</em></div>
-      </div>
-  </div>
-  <div class="span-12 last module">
-      <div class="latest_audio">
+        <footer class="clearfix">
+				  <p class="all"><a href="/calendar">View all events</a></p>
+  			  <p class="subscribe">Subscribe to our <a href="#">events feed</a></p>
+  			</footer>
+  		</div>
+  	</section>
+		<section class="widget message">
+			<header>
+				<h3>Latest Message</h3>
+			</header>
+			<div>
+			  
         <?php 
             $args = array( 'numberposts' => 1, 'post_type' => 'nh_message' );
             $lastposts = get_posts( $args );
             foreach($lastposts as $post) : setup_postdata($post); ?>           
-            <h4 class="recent-message-header">Listen to the our most recent audio below or <a href="/messages/">browse all messages.</a></h4>
-            <div class="recent-message-title"><em><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></em></div>
+            <article class="audio">
+              <p class="meta"><strong>
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong><br><a href="#">Todd Stewart</a> | <time pubdate datetime=""><abbr title="August">Aug</abbr> 7, 2011</time></p>
 		    <div class="audio-player"><?php the_excerpt(); ?></div>
             <?php
                 $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
@@ -89,24 +84,21 @@ get_header(); /* Loads the header.php template. */ ?>
                 if ($attachments) {
                     foreach ( $attachments as $attachment ) {
                         apply_filters( 'the_title' , $attachment->post_title );?>
-                        <div class="slides-link">
-                            <?php echo wp_get_attachment_link( $attachment->ID, '' , false, false, 'Download Slides'); ?>
-                        </div> 
+                        <p class="slides-link"><?php echo wp_get_attachment_link( $attachment->ID, '' , false, false, 'Download Slides'); ?></p>
                         <?php
                     }
                 }
             ?>
+            </article>
         <?php endforeach; ?>
-        <div class="subscribe_section"><em><a href=itpc://<?php echo $_SERVER["HTTP_HOST"]?>/messages/feed/podcast>Subcribe</a> to New Hope audio on <a href=itpc://<?php echo $_SERVER["HTTP_HOST"]?>/messages/feed/podcast>iTunes</a> or via <a href=/messages/feed/rss>rss</a>.</em></div>
-        </div>
-  </div>
-  <div class="clear"></div>
-
-
-  <div class="span-24 last">
-    &nbsp;
-  </div>
-</section>
+        		<footer class="clearfix">
+						  <p class="all"><a href="/messages/">Browse all messages</a></p>
+							<p class="subscribe">Subscribe on <a href="itpc://<?php echo $_SERVER["HTTP_HOST"]?>/messages/feed/podcast">iTunes</a></p>
+						</footer>
+					</div>
+				</section>
+			</div>
+	  </div>
 
 <?php get_footer(); ?>
 

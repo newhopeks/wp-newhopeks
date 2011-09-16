@@ -319,7 +319,7 @@ time > abbr[title]
 
 [role="banner"] > h1 > a
 {
-	background-color: rgba(0,0,0,.1); /* TEMP */
+	background: url('../images/logo.png');
 	height: 50px;
 	width: 150px;
 }

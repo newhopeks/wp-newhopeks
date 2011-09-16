@@ -43,7 +43,6 @@
   <!-- nivo slider CSS -->
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/nivo-slider.css" type="text/css" media="screen, projection">
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/nivo-slider-custom.css" type="text/css" media="screen, projection">
-    
 
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/libs/modernizr-2.06.min.js"></script>
@@ -79,9 +78,7 @@
 				</ol>
 			</nav>
 			<h1>
-					<a class="ir" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                        <img src="<?php bloginfo( 'stylesheet_directory' ); ?>/images/logo.gif" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"    
-                    </a>
+					<a class="ir" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">New Hope Church</a>
 			</h1>
 				
 			<nav role="navigation" class="clearfix">
