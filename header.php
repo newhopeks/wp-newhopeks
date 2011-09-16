@@ -8,7 +8,7 @@
  * @subpackage Starkers
  * @since Starkers 3.0
  */
-?> <!doctype html>
+?> <!DOCTYPE html>
  <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
  <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
  <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
@@ -45,7 +45,7 @@
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/nivo-slider-custom.css" type="text/css" media="screen, projection">
 
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-  <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/libs/modernizr-2.06.min.js"></script>
+  <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/libs/modernizr-2.0.6.min.js"></script>
 	
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php

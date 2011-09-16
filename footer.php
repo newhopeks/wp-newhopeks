@@ -81,7 +81,7 @@
   
   <!-- scripts concatenated and minified via ant build script-->
   <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/plugins.js"></script>
-  <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/script.js"></script>
+  <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/script.js?v=2"></script>
   <!-- end concatenated and minified scripts-->
 
 	<!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
