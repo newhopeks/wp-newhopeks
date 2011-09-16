@@ -97,6 +97,45 @@ get_header(); /* Loads the header.php template. */ ?>
 						</footer>
 					</div>
 				</section>
+				<section class="widget twitter">
+    			<header>
+    				<h3>Recent Tweets</h3>
+    			</header>
+    			<div>
+    			  <article class="tweet">
+    			    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+              <script>
+              new TWTR.Widget({
+                version: 2,
+                type: 'profile',
+                rpp: 3,
+                interval: 30000,
+                width: 'auto',
+                height: 80,
+                theme: {
+                  shell: {
+                    background: '#fffcff',
+                    color: '#6e6b6e'
+                  },
+                  tweets: {
+                    background: '#ffffff',
+                    color: '#787878',
+                    links: '#62a644'
+                  }
+                },
+                features: {
+                  scrollbar: false,
+                  loop: true,
+                  live: true,
+                  hashtags: true,
+                  timestamp: true,
+                  avatars: false,
+                  behavior: 'default'
+                }
+              }).render().setUser('newhopeks').start();
+              </script>
+    			  </article>
+    			</div>
 			</div>
 	  </div>
 

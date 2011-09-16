@@ -924,7 +924,7 @@ time > abbr[title]
 		width: 60%; /* Need a better way to do this... Framework? */
 	}
 	
-	.widgets .message
+	.widgets .message, .widgets .twitter
 	{
 		width: 35%; /* Need a better way to do this... Framework? */
 	}
