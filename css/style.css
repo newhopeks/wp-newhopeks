@@ -1,0 +1,1058 @@
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('../fonts/LeagueGothic/league_gothic-webfont.eot');
+    src: url('../fonts/LeagueGothic/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/LeagueGothic/league_gothic-webfont.woff') format('woff'),
+         url('../fonts/LeagueGothic/league_gothic-webfont.ttf') format('truetype'),
+         url('../fonts/LeagueGothic/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* 
+ * HTML5 ✰ Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling. 
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ *
+ * Detailed information about this CSS: h5bp.com/css
+ * 
+ * ==|== normalize ==========================================================
+ */
+
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+
+body, button, input, select, textarea { font-family: Helvetica Neue, Arial, sans-serif; color: #222; }
+
+/* 
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a { color: #65adb2; }
+a:visited { color: #551a8b; }
+a:hover { color: #75bdc2; }
+a:focus { outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol, .semanticList { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e 
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Correct overflow not hidden in IE9 
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+figure { margin: 0; }
+
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label { cursor: pointer; }
+
+/* 
+ * 1. Correct color not inheriting in IE6/7/8/9 
+ * 2. Correct alignment displayed oddly in IE6/7 
+ */
+
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 2. Correct inner spacing displayed oddly in IE6/7
+ */
+
+button, input { line-height: normal; *overflow: visible; }
+
+/*
+ * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7
+ */
+
+table button, table input { *overflow: auto; }
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ */
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+/*
+ * Consistent box sizing and appearance
+ */
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/* 
+ * Remove inner padding and border in FF3/4: h5bp.com/l 
+ */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/* 
+ * 1. Remove default vertical scrollbar in IE6/7/8/9 
+ * 2. Allow only vertical resizing
+ */
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+/* Colors for form validity */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+
+/* ==|== primary styles =====================================================
+   Author: 
+   ========================================================================== */
+
+/* Style adjustments for viewports 0px and over go here
+
+	 ALL & Mobile, portrait
+*/
+
+body
+{
+	background-color: #f3f0eb;
+	overflow-x: hidden; /* Only necessary when using http://css-tricks.com/9443-full-browser-width-bars/ for the full-width .secondary & footer */
+}
+
+img
+{
+	max-width: 100%;
+}
+
+h1 > a, h1 > a:visited, h1 > a:hover, h1 > a:focus, h1 > a:active,
+h2 > a, h2 > a:visited, h2 > a:hover, h2 > a:focus, h2 > a:active,
+h3 > a, h3 > a:visited, h3 > a:hover, h3 > a:focus, h3 > a:active
+{
+	color: inherit;
+	text-decoration: none;
+}
+
+time > abbr[title]
+{
+	border: none;
+}
+
+#container
+{
+	padding: 0 10px;
+}
+
+/*  Banner  */
+
+[role="banner"] > .secondary
+{
+	background-color: #635b4c;
+	font-family: Georgia, serif;
+	font-style: italic;
+	position: relative;
+}
+	
+[role="banner"] > .secondary:before,
+[role="banner"] > .secondary:after
+{
+   content: "";
+   position: absolute;
+   background-color: #635b4c;
+   top: 0;
+   bottom: 0;
+   width: 9999px;
+}
+
+[role="banner"] > .secondary:before
+{
+   right: 100%;
+}
+
+[role="banner"] > .secondary:after
+{
+   left: 100%;
+}
+
+[role="banner"] > .secondary li
+{
+	float: left;
+	width: 60%;
+}
+
+[role="banner"] > .secondary li:nth-of-type(even)
+{
+	text-align: right;
+	width: 40%;
+}
+
+[role="banner"] > .secondary a,
+[role="banner"] > .secondary a:visited,
+[role="banner"] > .secondary a:hover,
+[role="banner"] > .secondary a:focus,
+[role="banner"] > .secondary a:active
+{
+	color: #f3f0eb;
+	display: block;
+	padding: 6px 0;
+	text-decoration: none;
+}
+
+[role="banner"] > h1 > a
+{
+	margin: 5px auto;
+}
+
+[role="banner"] > h1 > a
+{
+	background-color: rgba(0,0,0,.1); /* TEMP */
+	height: 50px;
+	width: 150px;
+}
+
+[role="banner"] > [role="navigation"]
+{
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.fontface [role="banner"] > [role="navigation"]
+{
+	font-family: 'LeagueGothicRegular';
+	font-weight: normal;
+	font-size: 1.3em;
+	letter-spacing: .05em;
+}
+
+[role="banner"] > [role="navigation"] li
+{
+	display: inline-block;
+	margin: 0 .2em; /* This would be padding on the anchor, but for the border */
+}
+
+[role="banner"] > [role="navigation"] li:first-child
+{
+	margin-left: 0;
+}
+
+[role="banner"] > [role="navigation"] a,
+[role="banner"] > [role="navigation"] a:visited,
+[role="banner"] > [role="navigation"] a:hover,
+[role="banner"] > [role="navigation"] a:focus,
+[role="banner"] > [role="navigation"] a:active
+{
+	border-bottom: 3px solid transparent;
+	color: #444;
+	display: block;
+	padding: 8px 0 0;
+	text-decoration: none;
+}
+
+[role="banner"] > [role="navigation"] a:active,
+[role="banner"] > [role="navigation"] a.current
+{
+	border-color: #65adb2;
+}
+
+/*  END Banner  */
+
+/*  Hero  */
+
+#hero
+{
+	margin-bottom: 20px;
+}
+
+#hero > ol
+{
+	font: italic 1.3em Georgia, serif;
+}
+
+#hero > ol a,
+#hero > ol a:visited,
+#hero > ol a:hover,
+#hero > ol a:focus,
+#hero > ol a:active
+{
+	background-color: #6b9c46;
+	border-top: 1px solid #7f9f68;
+	-webkit-box-sizing: border-box;
+	color: #e2dcd1;
+	display: block;
+	padding: 12px;
+	text-decoration: none;
+}
+
+#hero > ol a:hover,
+#hero > ol a:focus,
+#hero > ol a:active
+{
+	color: #fff;
+}
+
+#hero > ol > li:first-child
+{
+	border: none;
+}
+
+#hero > ol > li:nth-of-type(2) > a
+{
+	background-color: #618d3e;
+}
+
+#hero > ol > li:nth-of-type(3) > a
+{
+	background-color: #587f39;
+}
+
+/*  END Hero  */
+
+/*  Widgets  */
+
+.widget
+{
+	color: #777270;
+	margin-bottom: 20px;
+}
+
+.widget > div
+{
+	background-color: #fff;
+	border-color: #bad9d7;
+	border-style: solid none;
+	border-width: 1px 0 5px;
+	padding: 0 10px;
+}
+
+.widget > header > h3
+{
+	color: #76934c;
+	font: bold italic 1.2em Georgia, serif;
+	margin: 0 0 .5em 5px;
+}
+
+.widget article
+{
+	border-top: 2px solid rgba(0,0,0,.1);
+	padding: 15px 0;
+}
+
+.widget article:first-of-type
+{
+	border: none;
+}
+
+/*
+.generatedcontent .widget article
+{
+	background-color: #fff;
+	border: none;
+	position: relative;
+}
+
+.generatedcontent .widget article:before /* This may not work... *
+{
+	background-color: rgba(0,0,0,.1); /* TEMP *
+	content: "";
+	display: block;
+	position: absolute;
+	top: -2px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	z-index: -1;
+}
+
+.generatedcontent .widget article:first-of-type:before
+{
+	display: none;
+}
+
+.generatedcontent .widget article:after
+{
+	clear: both;
+	content: "";
+	display: table;
+}
+*/
+
+.widget article > h3
+{
+	color: #76934c;
+	font-size: 1.1em;
+	font-weight: 500;
+	margin: 0 0 .5em;
+}
+
+.widget footer
+{
+	font: italic .9em Georgia, serif;
+	padding: 0 10px;
+}
+
+.widget * + footer
+{
+	border-top: 2px solid rgba(0,0,0,.1);
+}
+
+.widget footer .subscribe
+{
+	float: left;
+}
+
+.widget footer .subscribe > a,
+.widget footer .subscribe > a:visited,
+.widget footer .subscribe > a:hover,
+.widget footer .subscribe > a:focus,
+.widget footer .subscribe > a:active
+{
+	color: inherit;
+}
+
+.widget footer .all
+{
+	float: right;
+}
+
+.widget footer .all > a,
+.widget footer .all > a:visited,
+.widget footer .all > a:hover,
+.widget footer .all > a:focus,
+.widget footer .all > a:active
+{
+	color: #76934c;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.widget .event
+{
+	min-height: 58px;
+	padding-left:	55px;
+	position: relative;
+}
+
+.widget .event > time
+{
+	color: #b1b0ab;
+	padding-top: .5em;
+	position: absolute;
+	top: 15px;
+	left: 0;
+	text-align: center;
+	text-transform: uppercase;
+	width: 55px;
+}
+
+.widget .event > time > abbr
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+}
+
+.fontface .widget .event > time
+{
+	font-family: 'LeagueGothicRegular';
+	font-size: 3em;
+	letter-spacing: .05em;
+}
+
+.fontface .widget .event > time > abbr
+{
+	font-size: .5em;
+}
+
+.widget .event > p
+{
+	margin: 0;
+}
+
+.widget .event > .more
+{
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.widget .audio > p
+{
+	color: rgba(0,0,0,.5);
+	margin: 5px 0;
+}
+
+.widget .audio .meta
+{
+	margin-top: 0;
+}
+
+.widget .audio > p a,
+.widget .audio > p a:visited,
+.widget .audio > p a:hover,
+.widget .audio > p a:focus,
+.widget .audio > p a:active
+{
+	text-decoration: none;
+}
+
+/*  END Widgets  */
+
+/*  Footer  */
+
+#container > footer
+{
+	background-color: #e8e4dc;
+	color: rgba(0,0,0,.25);
+	font-size: .9em;
+	padding: 10px 0;
+	position: relative;
+}
+
+#container > footer:before,
+#container > footer:after
+{
+   content: "";
+   position: absolute;
+   background-color: #e8e4dc;
+   top: 0;
+   bottom: 0;
+   width: 9999px;
+}
+
+#container > footer:before
+{
+   right: 100%;
+}
+
+#container > footer:after
+{
+   left: 100%;
+}
+
+#container > footer ol ol
+{
+	-webkit-column-count: 2;
+}
+
+#container > footer a
+{
+	display: inline-block;
+	text-decoration: none;
+	padding: 12px 0;
+}
+
+#container > footer > nav > ol > li
+{
+	border-top: 1px solid rgba(255,255,255,.5);
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	padding-bottom: 5px;
+}
+
+#container > footer > nav > ol > li:first-child
+{
+	border-top: none;
+}
+
+#container > footer > nav > ol > li:last-child
+{
+	border-bottom: none;
+}
+
+#container > footer > nav > ol > li > a,
+#container > footer > nav > ol > li > a:visited,
+#container > footer > nav > ol > li > a:hover,
+#container > footer > nav > ol > li > a:focus,
+#container > footer > nav > ol > li > a:active
+{
+	color: #76934c;
+	font: bold italic 1em Georgia, serif;
+}
+
+#container > footer ol ol a,
+#container > footer ol ol a:visited,
+#container > footer ol ol a:hover,
+#container > footer ol ol a:focus,
+#container > footer ol ol a:active
+{
+	color: rgba(0,0,0,.4);
+}
+
+/*  END Footer  */
+
+
+/* ==|== media queries ======================================================
+   PLACEHOLDER Media Queries for Responsive Design.
+   These override the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 321px)
+{
+  /* Style adjustments for viewports 320px and over go here
+  
+  	 Mobile, landscape
+  */
+  
+  [role="banner"] > h1
+  {
+  	margin: 0;
+  	position: absolute;
+  	bottom: 8px;
+  	left: 0;
+  }
+  
+  [role="banner"] > h1 > a
+  {
+  	margin: 0;
+  }
+  
+  [role="banner"]
+  {
+  	min-height: 9.5em;
+  	position: relative;
+  }
+  
+  [role="banner"] > [role="navigation"]
+  {
+  	margin: 0;
+  	padding: .7em 0 0 170px;
+  	text-align: right;
+  }
+  
+  .fontface [role="banner"] > [role="navigation"]
+  {
+  	font-size: 1.3em;
+  }
+  
+  [role="banner"] > [role="navigation"] li > a
+  {
+  	padding: 12px 0 0;
+  }
+  
+  #container > footer ol ol
+  {
+  	-webkit-column-count: 3;
+  }
+  
+}
+
+@media only screen and (min-width: 481px)
+{
+  /* Style adjustments for viewports 480px and over go here
+  
+  	 Tablet, portrait
+  */
+
+	#container
+	{
+		margin: 0 auto;
+		max-width: 940px;
+		width: 95%;
+	}
+	
+	/*  Banner  */
+	
+	[role="banner"]
+	{
+		min-height: 9em;
+	}
+	
+	[role="banner"] > .secondary
+	{
+		font-size: .9em;
+		min-height: 2.4em;
+	}
+	
+	[role="banner"]  > .secondary > ol
+	{
+		float: right;
+		padding: .6em 0;
+	}
+	
+	[role="banner"]  > .secondary li,
+	[role="banner"]  > .secondary li:nth-of-type(even)
+	{
+		border-left: 1px solid #978a76;
+		display: block;
+		padding: 0 1em;
+		width: auto;
+	}
+	
+	[role="banner"] > .secondary li:first-child
+	{
+		border: none;
+	}
+	
+	[role="banner"] > .secondary li:nth-of-type(even)
+	{
+		text-align: left;
+	}
+	
+	[role="banner"] > .secondary a
+	{
+		display: inline;
+		padding: 0;
+	}
+	
+	[role="banner"] > h1
+	{
+		bottom: 8px;
+	}
+	
+	[role="banner"] > [role="navigation"]
+	{
+		padding-top: 1.8em;
+	}
+	
+	.fontface [role="banner"] > [role="navigation"]
+	{
+		font-size: 1.7em;
+		padding-top: 1.8em;
+	}
+	
+	[role="banner"] > [role="navigation"] li
+	{
+		margin: 0 2%;
+	}
+	
+	[role="banner"] > [role="navigation"] a:hover,
+	[role="banner"] > [role="navigation"] a:focus
+	{
+		border-color: rgba(0,0,0,.1);
+	}
+	
+	/*  END Banner  */
+	
+	/*  Hero  */
+	
+	#hero
+	{
+		border: 1px solid rgba(0,0,0,.1);
+		padding: 8px;
+	}
+	
+	.generatedcontent #hero
+	{
+		background-color: #f3f0eb;
+		border: none;
+		position: relative;
+	}
+	
+	.generatedcontent #hero:before /* This may not work... */
+	{
+		background-color: rgba(0,0,0,.1); /* TEMP */
+		content: "";
+		display: block;
+		position: absolute;
+		top: -1px;
+		right: -1px;
+		bottom: -1px;
+		left: -1px;
+		z-index: -1;
+	}
+	
+	#hero > .image
+	{
+		float: left;
+		width: 70%;
+	}
+	
+	#hero > ol
+	{
+		float: left;
+		width: 30%;
+	}
+	
+	#hero > ol a,
+	#hero > ol a:visited,
+	#hero > ol a:hover,
+	#hero > ol a:focus,
+	#hero > ol a:active
+	{
+		min-height: 110px;
+		padding: 20px;
+	}
+	
+	#hero > ol > li:first-child
+	{
+		border: none;
+	}
+	
+	#hero > ol > li:nth-of-type(2) > a
+	{
+		background-color: #618d3e;
+	}
+	
+	#hero > ol > li:nth-of-type(3) > a
+	{
+		background-color: #587f39;
+	}
+	
+	/*  END Hero  */
+	
+	/*  Widgets  */
+	
+	.widgets .widget
+	{
+		float: left;
+		margin-left: 5%;
+	}
+	
+	.widgets .widget:first-of-type
+	{
+		margin-left: 0;
+	}
+	
+	.widgets .upcoming
+	{
+		width: 60%; /* Need a better way to do this... Framework? */
+	}
+	
+	.widgets .message
+	{
+		width: 35%; /* Need a better way to do this... Framework? */
+	}
+	
+	.widget .event
+	{
+		padding-left:	85px;
+	}
+	
+	.widget .event > time
+	{
+		width: 85px;
+	}
+	
+	/*  END Widgets  */
+	
+	/*  Footer  */
+	
+	#container > footer
+	{
+		margin-top: 30px;
+	}
+	
+	#container > footer > nav
+	{
+		padding: 1.4em 0 4.2em;
+	}
+	
+	#container > footer ol ol
+	{
+		-webkit-column-count: 1;
+	}
+	
+	#container > footer a
+	{
+		display: inline-block;
+		padding: 6px;
+	}
+	
+	#container > footer > nav > ol > li
+	{
+		border: none;
+		float: left;
+		padding: 0;
+		width: 20%;
+	}
+
+	/*  END Footer  */
+
+}
+
+@media only screen and (min-width: 769px)
+{
+  /* Style adjustments for viewports 768px and over go here
+  
+  	 Tablet, landscape & desktop, small
+  */
+
+	
+
+}
+
+@media only screen and (min-width: 1025px)
+{
+  /* Style adjustments for viewports 1024px and over go here
+  
+  	 Desktop
+  */
+  
+  
+		
+}
+
+@media only screen and (min-width: 1281px)
+{
+  /* Style adjustments for viewports 1280px and over go here
+  
+  	 Desktop, wide
+  */
+  
+  
+		
+}
+
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */ 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}

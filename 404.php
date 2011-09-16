@@ -11,8 +11,8 @@ get_header(); ?>
 
 
 
-				<h1><?php _e( 'Not Found', 'twentyten' ); ?></h1>
-				<p><?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'twentyten' ); ?></p>
+				<h1><?php _e( 'Not Found', 'starkers' ); ?></h1>
+				<p><?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'starkers' ); ?></p>
 				<?php get_search_form(); ?>
 
 	<script type="text/javascript">
@@ -27,73 +27,38 @@ get_header(); ?>
  * 
  */
  
- // set tenant key
- $tenantKey = 'wpsandbox';
+ /*
  // get missing page url
- $missingPageUrl = 'http://wpsandbox.54apps.info/wherever';
+ $missingPageUrl = "http://" . $_SERVER['HTTP_HOST']  . $_SERVER['REQUEST_URI'];
  
- // get current timestamp in milliseconds
-  $timeparts = explode(" ",microtime());
-  $currenttime = bcadd(($timeparts[0]*1000),bcmul($timeparts[1],1000));
+  // print api url for debugging
+ _e('<p>Checking api for missing page redirect: ' . $missingPageUrl . '</p>');
+ 
+ // call api
+   global $acupath_api_url;
+   
+     // print api url for debugging
+ _e('<p>Using api url: ' . $acupath_api_url . '</p>');
+ 
+  // build api url
+  $apiUrl = $acupath_api_url . '/submit/pagenotfound/?url=' . $missingPageUrl . '&nocache=' . $currenttime;
 
- // build api url
- $apiUrl = 'http://smart404.54apps.com/api/v1/' . $tenantKey . '/submit/pagenotfound/?url=' . $missingPageUrl . '&nocache=' . $currenttime;
- 
- // print api url for debugging
- _e('<p>making call to smart404 api at: ' . $apiUrl . '</p>');
- 
- $session = curl_init($apiUrl);
- curl_setopt($session, CURLOPT_HEADER, false);
- curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
- curl_setopt($session, CURLOPT_CONNECTTIMEOUT, 5);
- curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json'));
- $response = curl_exec($session);
- curl_close($session);
- 
- // get http status code
- $status_code = array();
- preg_match('/\d\d\d/', $response, $status_code);
- 
-  _e('<p>');
- // check status
- switch($status_code[0] ){
-   case 200:
-     _e($response, 'smart404');
-     break;
-   case 503:
-     _e('smart404 returned 503: service unavailable', 'smart404');
-     break;
-     break;
-   case 403:
-     _e('smart404 returned 403: forbidden', 'smart404');
-     break;
-     break;
-   case 503:
-     _e('smart404 returned 400: bad request', 'smart404');
-     break;
-     break;
-   default:
-     _e('smart404 returned status code:' . $status_code[0] . ' and response: ' . $response, 'smart404');
-     break;
- }
-_e('</p>');
-
-// convert json respons to object
-$rObj = json_decode($response);
+  // use wp built in functions to make http GET call to API (note: default timeout is 5s)
+  $get_response = wp_remote_get($apiUrl, array( 'headers' => array( 'Accept' => 'application/json' ) ));
+  // get body of response
+  $response_body = wp_remote_retrieve_body( $get_response );
+  // handle empty body on http error (timeout or non-200 status)
+  if( $response_body == null || $response_body == '' ){ _e('<p><b>response body was empty</b></p>'); }
+  
+  _e('response body was: ' . $response_body);
+  
+   
+         // convert json response to object
+      $rObj = json_decode($response_body);
 _e('<p>response.RedirectUrl is: ' . $rObj->{'RedirectUrl'} . '</p>');
 _e('<p>response.ErrorCode is: ' . $rObj->{'ErrorCode'} . '</p>');
 _e('<p>json last error is: ' . json_last_error() . '</p>');
-
+*/
 ?>
-  <?php if (smart404_loop()) : ?>
-  <p>Or, try one of these posts:</p>
-  <?php while (have_posts()) : the_post(); ?>
-  <h4><a href="<?php the_permalink() ?>"
-    rel="bookmark"
-  title="<?php the_title_attribute(); ?>">
-  <?php the_title(); ?></a></h4>
-    <small><?php the_excerpt(); ?></small>
-  <?php endwhile; ?>
-  <?php endif; ?>
 
 <?php get_footer(); ?>
