@@ -108,10 +108,10 @@ get_header(); /* Loads the header.php template. */ ?>
               new TWTR.Widget({
                 version: 2,
                 type: 'profile',
-                rpp: 3,
+                rpp: 1,
                 interval: 30000,
                 width: 'auto',
-                height: 80,
+                height: 74,
                 theme: {
                   shell: {
                     background: '#fffcff',
@@ -125,7 +125,7 @@ get_header(); /* Loads the header.php template. */ ?>
                 },
                 features: {
                   scrollbar: false,
-                  loop: true,
+                  loop: false,
                   live: true,
                   hashtags: true,
                   timestamp: true,

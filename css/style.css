@@ -972,6 +972,10 @@ time > abbr[title]
 		width: 20%;
 	}
 
+/* hide twitter widget footer */
+.twtr-ft{ display: none!important; }
+.twtr-bd{ height: 75px; overflow: hidden; }
+
 	/*  END Footer  */
 
 }
