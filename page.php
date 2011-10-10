@@ -41,14 +41,6 @@ get_header(); ?>
 
       <nav class="secondary">
 
-        <ol>
-
-      		<li><a href="#">Child Page 1</a></li>
-      		<li><a href="#">Child Page 2</a></li>
-      		<li><a href="#">Child Page 3</a></li>
-      		<li><a href="#">Child Page 4</a></li>
-      		<li><a href="#">Child Page 5</a></li>
-      	</ol>
 <?php
 	// left sidebar holds page nav
 	if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
