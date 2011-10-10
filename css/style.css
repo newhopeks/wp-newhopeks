@@ -230,7 +230,7 @@ td { vertical-align: top; }
 
 body
 {
-	background: #f3f0eb url(../img/NoisyTile.png) repeat left top;
+	background: #f3f0eb url(../images/NoisyTile.png) repeat left top;
 	overflow-x: hidden; /* Only necessary when using http://css-tricks.com/9443-full-browser-width-bars/ for the full-width .secondary & footer */
 }
 
