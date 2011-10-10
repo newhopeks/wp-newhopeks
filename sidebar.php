@@ -51,14 +51,6 @@
 	 */
 	if ( ! dynamic_sidebar( 'secondary-widget-area' ) ) : ?>
 
-			<section class="widget meta">
-				<header><h3><?php _e( 'Meta', 'twentyten' ); ?></h3></header>
-				<div><ul>
-					<?php wp_register(); ?>
-					<li><?php wp_loginout(); ?></li>
-					<?php wp_meta(); ?>
-				</ul></div>
-			</section>
 
 		<?php endif; // end secondary widget area ?>
 

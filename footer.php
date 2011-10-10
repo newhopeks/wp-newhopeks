@@ -74,7 +74,7 @@
         </ol>
       </nav>
       
-			<a href="<?php echo home_url( '/' ) ?>" title="New Hope Church" rel="home">NewHopeKs.org</a> | <a href="/privacy-policy">Privacy</a>
+			<a href="<?php echo home_url( '/' ) ?>" title="New Hope Church" rel="home">NewHopeKs.org</a> | <a href="/privacy-policy">Privacy</a> | <?php wp_loginout(); ?>
 		</footer>
 	</div><?php /* .container */ ?>
 
