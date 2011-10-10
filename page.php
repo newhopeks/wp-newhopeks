@@ -14,16 +14,19 @@
 
 get_header(); ?>
 
-<div id="content">
+<div id="main" role="main">
+  <section id="page">
+  	  
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-<article>
-	<header>
+    <div class="widget" id="post">
+  		<div>
+  			<header>
 	<?php if ( is_front_page() ) { ?>
 		<h2><?php the_title(); ?></h2>
 	<?php } else { ?>	
 		<h1><?php the_title(); ?></h1>
 	<?php } ?>	
-	</header>			
+	    </header>		
 
 	<?php the_content(); ?>
 	
@@ -31,10 +34,24 @@ get_header(); ?>
 		<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
 		<?php edit_post_link( __( 'Edit', 'twentyten' ), '', '' ); ?>
 	</footer>
-</article>
 	
+      </div>
+	  </div>
 <?php endwhile; ?>
-</div>
+
+      <nav class="secondary">
+    		<ol>
+    			<li><a href="#">Child Page 1</a></li>
+    			<li><a href="#">Child Page 2</a></li>
+    			<li><a href="#">Child Page 3</a></li>
+    			<li><a href="#">Child Page 4</a></li>
+    			<li><a href="#">Child Page 5</a></li>
+    		</ol>
+    	</nav>
+    </section>
 
 <?php get_sidebar(); ?>
+
+</div>
+
 <?php get_footer(); ?>

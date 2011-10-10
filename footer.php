@@ -10,6 +10,11 @@
  * @since Starkers 3.0
  */
 ?>
+
+<div class="search">
+	<input type="search" placeholder="Search&hellip;">
+	<input type="submit" value="Go">
+</div>
 		<footer id="footer">
 		<?php
 			/* A sidebar in the footer? Yep. You can can customize
