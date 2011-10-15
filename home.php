@@ -28,7 +28,7 @@ get_header(); /* Loads the header.php template. */ ?>
 	<div class="widgets clearfix">
     <section class="widget upcoming">
     <header>
-        <h3>Announcements and Events</h3>
+        <h3>Announcements / Events</h3>
     </header>				
     <div>
         <?php 
@@ -36,7 +36,7 @@ get_header(); /* Loads the header.php template. */ ?>
             $lastposts = get_posts( $args );
             foreach($lastposts as $post) : setup_postdata($post); ?>           
         <article class="event">
-        <time datetime="<?php the_time('F jS, Y') ?>"><abbr title="<?php the_time('l, F jS, Y') ?>"><?php the_time('M') ?></abbr><?php the_time('j') ?></time>
+        <time datetime="<?php the_time('F jS, Y') ?>"><abbr title="<?php the_time('F') ?>"><?php the_time('M') ?></abbr><?php the_time('j') ?></time>
         <h3><a href="<?php the_permalink(); ?>" 
             title="<?php the_title() ?>">
                 <?php the_title() ?>
@@ -45,7 +45,7 @@ get_header(); /* Loads the header.php template. */ ?>
         </article>
         <?php endforeach; ?>
         <footer class="clearfix">
-			  <p class="all"><a href="/calendar">View all</a></p>
+			  <p class="all"><a href="/blog">View all</a></p>
 		  <p class="subscribe">Subscribe to our <a href="#">events feed</a></p>
 		</footer>
 	</div>
@@ -61,7 +61,7 @@ get_header(); /* Loads the header.php template. */ ?>
             foreach($lastposts as $post) : setup_postdata($post); ?>           
         <article class="audio">
           <p class="meta"><strong>
-            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong><br><a href="#">Todd Stewart</a> | <time pubdate datetime=""><abbr title="August">Aug</abbr> 7, 2011</time></p>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong><br><?php twentyten_posted_on(); ?></p>
 	    <div class="audio-player"><?php the_excerpt(); ?></div>
         <?php
             $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
