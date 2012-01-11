@@ -353,7 +353,7 @@ time > abbr[title]
 
 [role="banner"] > h1 > a
 {
-	background: url(../images/logo.png) no-repeat bottom;
+	background-image: url(../images/Logo.png);
 	height: 50px;
 	width: 150px;
 }
@@ -480,7 +480,7 @@ time > abbr[title]
 }
 
 /* 
-#page > .secondary
+[role="main"] .secondary
 {
 	background-color: #6b9c45;
 	border-top: 5px solid #628d3d;
@@ -490,20 +490,20 @@ time > abbr[title]
 
 Or: */
 
-#page > .secondary
+[role="main"] .secondary
 {
 	background-color: rgba(255,255,255,.8);
 	border-top: 5px solid #bad9d7;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	padding: 0 1%;
 }
 
 /*
-#page > .secondary a,
-#page > .secondary a:visited,
-#page > .secondary a:hover,
-#page > .secondary a:focus,
-#page > .secondary a:active
+[role="main"] .secondary a,
+[role="main"] .secondary a:visited,
+[role="main"] .secondary a:hover,
+[role="main"] .secondary a:focus,
+[role="main"] .secondary a:active
 {
 	border-top: 1px solid #85b462;
 	color: #eee;
@@ -517,11 +517,11 @@ Or: */
 
 Or: */
 
-#page > .secondary a,
-#page > .secondary a:visited,
-#page > .secondary a:hover,
-#page > .secondary a:focus,
-#page > .secondary a:active
+[role="main"] .secondary a,
+[role="main"] .secondary a:visited,
+[role="main"] .secondary a:hover,
+[role="main"] .secondary a:focus,
+[role="main"] .secondary a:active
 {
 	border-top: 1px solid rgba(0,0,0,.1);
 	color: rgba(101,173,178,.8);
@@ -532,26 +532,26 @@ Or: */
 	text-decoration: none;
 }
 
-#page > .secondary li:first-child > a
+[role="main"] .secondary li:first-child > a
 {
 	border: none;
 }
 
 /*
-#page > .secondary a:visited,
-#page > .secondary a:hover,
-#page > .secondary a:focus,
-#page > .secondary a:active
+[role="main"] .secondary a:visited,
+[role="main"] .secondary a:hover,
+[role="main"] .secondary a:focus,
+[role="main"] .secondary a:active
 {
 	color: #fff;
 }
 
 Or: */
 
-#page > .secondary a:visited,
-#page > .secondary a:hover,
-#page > .secondary a:focus,
-#page > .secondary a:active
+[role="main"] .secondary a:visited,
+[role="main"] .secondary a:hover,
+[role="main"] .secondary a:focus,
+[role="main"] .secondary a:active
 {
 	color: rgb(101,173,178);
 }
@@ -560,7 +560,7 @@ Or: */
 
 /*  Just messing around...  */
 .widget > div,
-#page > .secondary
+[role="main"] .secondary
 {
 	box-shadow: 1px 1px 2px rgba(0,0,0,.1);
 }
@@ -976,7 +976,7 @@ Or: */
 	{
 		margin: 0 auto;
 		padding: 0;
-		max-width: 940px;
+		max-width: 1400px;
 		width: 95%;
 	}
 	
@@ -1134,20 +1134,12 @@ Or: */
 	
 	#post
 	{
-		float: right;
-		margin-left: 2%;
-		width: 75%;
+		
 	}
 	
 	#post > div
 	{
 		padding: 15px 25px;
-	}
-	
-	#page > .secondary
-	{
-		float: left;
-		width: 21%;
 	}
 	
 	/*  END Page Content  */
@@ -1174,15 +1166,10 @@ Or: */
 	}
 	
 	.widgets .message,
-	.sidebar .message,
-	.widgets .twitter,
-	.sidebar .twitter
+	.sidebar .message
 	{
 		width: 37%; /* Need a better way to do this... Framework? */
 	}
-	
-	.twtr-ft{ display: none!important; }
-	.twtr-bd{ height: 75px; overflow: hidden; }
 	
 	/*  END Widgets  */
 	
@@ -1270,19 +1257,25 @@ Or: */
   
   #page
   {
-  	float: left;
-  	width: 73%;
+  	float: right;
+  	width: 72%;
   }
   
   /*  END Page Content */
   
   /*  Sidebar  */
   
+  [role="main"] .secondary,
   .sidebar
   {
   	float: left;
-  	margin-left: 2%;
-  	width: 25%;
+  	margin-right: 2%;
+  	width: 26%;
+  }
+  
+  [role="main"] .secondary
+  {
+  	width: 24%;
   }
 
 	.sidebar .widget
@@ -1332,8 +1325,35 @@ Or: */
   	 Desktop
   */
   
+  #page,
+  [role="main"] .secondary,
+  .sidebar
+  {
+  	float: left;
+  	margin-left: 0;
+  	margin-right: 2%;
+  	position: relative;
+  }
   
-		
+  #page
+  {
+  	left: 20%;
+  	width: 55%;
+  }
+  
+  [role="main"] .secondary
+  {
+  	right: 57%;
+  	width: 16%;
+  }
+  
+  .sidebar
+  {
+  	margin-right: 0;
+  	position: static;
+  	width: 23%;
+  }
+  	
 }
 
 @media only screen and (min-width: 1281px)
@@ -1342,8 +1362,6 @@ Or: */
   
   	 Desktop, wide
   */
-  
-  
 		
 }
 

@@ -39,18 +39,19 @@ get_header(); ?>
 	  </div>
 <?php endwhile; ?>
 
-      <nav class="secondary">
+      
+    </section>
+    <nav class="secondary">
 
 <?php
-	// left sidebar holds page nav
-	if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
-    		
-			  <?php dynamic_sidebar( 'primary-widget-area' ); ?>
+// left sidebar holds page nav
+if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
+  		
+		  <?php dynamic_sidebar( 'primary-widget-area' ); ?>
 
 <?php endif; ?>
 
-    	</nav>
-    </section>
+  	</nav>
 
 <?php get_sidebar(); ?>
 

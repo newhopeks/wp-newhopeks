@@ -35,15 +35,15 @@ get_header(); ?>
         </div>
     </div>
 <?php endwhile; // end of the loop. ?>
-      
-    <nav class="secondary">
-        <ol>
-            <li><a href="/blog">All posts</a></li>
-            <li><a href="/blog/rss">Subscribe</a></li>
-        </ol>
-    </nav>
     
   </section>
+  <nav class="secondary">
+      <ol>
+          <li><a href="/blog">All posts</a></li>
+          <li><a href="/blog/rss">Subscribe</a></li>
+      </ol>
+  </nav>
+  
   <?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>

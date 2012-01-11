@@ -30,14 +30,13 @@
     </div>
 	<?php endwhile; ?>
     
-    <nav class="secondary">
-        <ol>
-            <li><a href="/messages">All messages</a></li>
-            <li><a href="#">Series list</a></li>
-        </ol>
-    </nav>
-    
   </section>
+  <nav class="secondary">
+      <ol>
+          <li><a href="/messages">All messages</a></li>
+          <li><a href="#">Series list</a></li>
+      </ol>
+  </nav>
   <?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>
