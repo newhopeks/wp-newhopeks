@@ -5,7 +5,13 @@ Template Name: Archives with Content
 ?>
 
 <?php get_header(); ?>
-<div id="main" role="main">
+
+<?php
+// hide secondary nav and add class to main dif if no children
+$children = get_pages('child_of='.$post->ID);
+?>
+
+<div id="main" role="main" <?php if( count( $children ) == 0 ) : ?>class="no_children"<?php endif;?> >
   <section id="page">
      <?php if (have_posts()) : while (have_posts()) : the_post();?>
     <div class="widget" id="post">
@@ -43,17 +49,22 @@ Template Name: Archives with Content
     </div>
     
 </section>
-<nav class="secondary">
+
+   <?php // hide secondary nav if no children
+     if( count( $children ) != 0 ) : ?>
+     
+    <nav class="secondary">
 
     <?php
-        // left sidebar holds page nav
-        if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
-                
-                <?php dynamic_sidebar( 'primary-widget-area' ); ?>
-    
+    // left sidebar holds page nav
+    if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
+
+    		  <?php dynamic_sidebar( 'primary-widget-area' ); ?>
+
     <?php endif; ?>
 
-</nav>
+    </nav>
+    <?php endif; ?>
     
     <?php get_sidebar(); ?>
 </div>

@@ -49,7 +49,6 @@ get_header(); ?>
             
         </div>
     </div>
-    <nav class="secondary">
 
         <?php
             // left sidebar holds page nav
@@ -59,7 +58,6 @@ get_header(); ?>
         
         <?php endif; ?>
 
-	</nav>
 </section>
     
     <?php get_sidebar(); ?>

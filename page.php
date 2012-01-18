@@ -14,7 +14,12 @@
 
 get_header(); ?>
 
-<div id="main" role="main">
+<?php
+// hide secondary nav and add class to main dif if no children
+$children = get_pages('child_of='.$post->ID);
+?>
+
+<div id="main" role="main" <?php if( count( $children ) == 0 ) { ?>class="no_children"<?php } ?> >
   <section id="page">
   	  
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -29,11 +34,8 @@ get_header(); ?>
 	    </header>		
 
 	<?php the_content(); ?>
-	
-	<footer>
-		<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
-		<?php edit_post_link( __( 'Edit', 'twentyten' ), '', '' ); ?>
-	</footer>
+	 
+	<?php edit_post_link( __( 'Edit', 'twentyten' ), '', '' ); ?>
 	
       </div>
 	  </div>
@@ -41,7 +43,6 @@ get_header(); ?>
 
       
     </section>
-    <nav class="secondary">
 
 <?php
 // left sidebar holds page nav
@@ -50,8 +51,6 @@ if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
 		  <?php dynamic_sidebar( 'primary-widget-area' ); ?>
 
 <?php endif; ?>
-
-  	</nav>
 
 <?php get_sidebar(); ?>
 
