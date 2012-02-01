@@ -34,15 +34,10 @@ Template Name: Archives with Content
 </div>
 </div>
 <nav class="secondary">
-
-    <?php
-        // left sidebar holds page nav
-        if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
-                
-                <?php dynamic_sidebar( 'primary-widget-area' ); ?>
-    
-    <?php endif; ?>
-
+    <ol>
+        <li><a href="/blog">All posts</a></li>
+        <li><a href="/blog/rss">Subscribe</a></li>
+    </ol>
 </nav>
 </section>
 
