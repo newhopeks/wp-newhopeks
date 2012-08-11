@@ -36,7 +36,7 @@ $j(function() {
 	        var photoID = item.id;
 	        var photoTitle = item.title;
 	 
-	        var imgCont = '<img src="' + photoURL + '" alt="' + photoTitle + '"/>';
+	        var imgCont = '<li><img src="' + photoURL + '" alt="' + photoTitle + '"/></li>';
 	 
 	        //append the 'imgCont' variable to the document
 	        $j(imgCont).appendTo(containerSelector);
